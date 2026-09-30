@@ -1,5 +1,5 @@
 {% set name = "wecopttool" %}
-{% set version = "3.2.1" %}
+{% set version = "3.3.0" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -19,16 +19,17 @@ requirements:
     - setuptools
     - pip
   run:
-    - python >={{ python_min }},<3.12
+    - python >={{ python_min }},<=3.12
     - pip
     - numpy >=1.20
     - scipy
     - xarray
     - jax
-    - capytaine
+    - capytaine ==2.3.1
     - joblib
-    - wavespectra >=3.13
+    - wavespectra >=4.0
     - netcdf4
+    - pym4e ==2.0.0
 
 test:
   imports:
